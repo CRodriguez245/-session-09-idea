@@ -6,10 +6,11 @@
 }
 
 body {
-    font-family: 'Source Sans Pro', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #fafafa;
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.7;
+    color: #2c1810;
+    background: linear-gradient(135deg, #f4f1e8 0%, #e8dcc0 50%, #d4c4a8 100%);
+    background-attachment: fixed;
 }
 
 .container {
@@ -41,10 +42,11 @@ body {
 }
 
 .nav-logo h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cinzel', serif;
     font-size: 1.8rem;
-    color: #2c3e50;
+    color: #8b4513;
     margin-bottom: -5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .nav-subtitle {
@@ -61,10 +63,12 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: #2c3e50;
-    font-weight: 400;
+    color: #8b4513;
+    font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
 }
 
 .nav-link:hover {
@@ -105,9 +109,24 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #f8f6f0 0%, #e8e0d0 100%);
+    background: linear-gradient(135deg, #f4f1e8 0%, #e8dcc0 50%, #d4c4a8 100%);
     position: relative;
     overflow: hidden;
+}
+
+/* Renaissance Pattern Background */
+.renaissance-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 40%, rgba(139, 69, 19, 0.05) 50%, transparent 60%);
+    background-size: 200px 200px, 300px 300px, 100px 100px;
+    z-index: 1;
 }
 
 .hero::before {
@@ -134,12 +153,25 @@ body {
 }
 
 .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 4rem;
+    font-family: 'Cinzel', serif;
+    font-size: 4.5rem;
     color: #8b4513;
     margin-bottom: 1rem;
     line-height: 1.1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.hero-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #8b4513, #d2691e, #8b4513);
+    border-radius: 2px;
 }
 
 .hero-subtitle {
@@ -202,18 +234,48 @@ body {
 }
 
 .sculpture-preview {
-    width: 300px;
-    height: 400px;
+    width: 320px;
+    height: 420px;
     background: linear-gradient(145deg, #d4c4a8, #e8dcc0);
-    border-radius: 20px;
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 20px 40px rgba(139, 69, 19, 0.2);
+    box-shadow: 
+        0 25px 50px rgba(139, 69, 19, 0.3),
+        inset 0 2px 10px rgba(255, 255, 255, 0.3);
     position: relative;
     overflow: hidden;
-    border: 3px solid #8b4513;
+    border: 4px solid #8b4513;
+    z-index: 2;
+}
+
+/* Marble Texture Effect */
+.marble-texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%),
+        linear-gradient(-45deg, transparent 40%, rgba(139, 69, 19, 0.1) 60%, transparent 80%);
+    background-size: 100px 100px, 150px 150px;
+    z-index: 1;
+}
+
+/* Renaissance Decorative Border */
+.renaissance-border {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px solid #8b4513;
+    border-radius: 15px;
+    background: linear-gradient(45deg, transparent 40%, rgba(139, 69, 19, 0.1) 50%, transparent 60%);
+    z-index: 3;
 }
 
 .sculpture-preview::before {
@@ -261,10 +323,31 @@ section {
 }
 
 .section-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    color: #2c3e50;
+    font-family: 'Cinzel', serif;
+    font-size: 3.2rem;
+    color: #8b4513;
     margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.section-header h2::before,
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #8b4513, #d2691e);
+}
+
+.section-header h2::before {
+    left: -80px;
+}
+
+.section-header h2::after {
+    right: -80px;
 }
 
 .section-subtitle {
@@ -275,7 +358,35 @@ section {
 
 /* About Section */
 .about {
-    background: white;
+    background: linear-gradient(135deg, #f8f6f0 0%, #f0ebe0 100%);
+    position: relative;
+}
+
+/* Renaissance Ornament */
+.renaissance-ornament {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background: 
+        radial-gradient(circle at center, rgba(139, 69, 19, 0.1) 0%, transparent 70%),
+        linear-gradient(45deg, transparent 40%, rgba(139, 69, 19, 0.05) 50%, transparent 60%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.renaissance-ornament::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 2px solid #8b4513;
+    border-radius: 50%;
+    background: linear-gradient(45deg, transparent 30%, rgba(139, 69, 19, 0.1) 50%, transparent 70%);
 }
 
 .about-content {
@@ -286,10 +397,12 @@ section {
 }
 
 .about-intro h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: #2c3e50;
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    color: #8b4513;
     margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
 }
 
 .about-intro p {
@@ -305,9 +418,12 @@ section {
 }
 
 .detail-item h4 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: #8b4513;
     margin-bottom: 0.5rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .detail-item p {
@@ -346,7 +462,21 @@ section {
 
 /* Gallery Section */
 .gallery {
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #f0ebe0 0%, #e8dcc0 100%);
+    position: relative;
+}
+
+.gallery::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(139, 69, 19, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+    z-index: 1;
 }
 
 .gallery-filters {
@@ -381,11 +511,16 @@ section {
 }
 
 .gallery-item {
-    background: white;
-    border-radius: 15px;
+    background: linear-gradient(145deg, #f8f6f0, #f0ebe0);
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 
+        0 15px 35px rgba(139, 69, 19, 0.2),
+        inset 0 1px 3px rgba(255, 255, 255, 0.3);
     transition: transform 0.3s ease;
+    border: 2px solid rgba(139, 69, 19, 0.1);
+    position: relative;
+    z-index: 2;
 }
 
 .gallery-item:hover {
@@ -438,9 +573,11 @@ section {
 }
 
 .gallery-overlay h4 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-bottom: 0.5rem;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .gallery-overlay p {
@@ -466,7 +603,22 @@ section {
 
 /* Exhibitions Section */
 .exhibitions {
-    background: white;
+    background: linear-gradient(135deg, #f4f1e8 0%, #f0ebe0 100%);
+    position: relative;
+}
+
+.exhibitions::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, transparent 40%, rgba(139, 69, 19, 0.03) 50%, transparent 60%),
+        radial-gradient(circle at 50% 50%, rgba(139, 69, 19, 0.05) 0%, transparent 70%);
+    background-size: 200px 200px, 400px 400px;
+    z-index: 1;
 }
 
 .exhibitions-timeline {
@@ -515,19 +667,26 @@ section {
 }
 
 .timeline-content {
-    background: #f8f9fa;
+    background: linear-gradient(145deg, #f8f6f0, #f0ebe0);
     padding: 2rem;
-    border-radius: 15px;
+    border-radius: 20px;
     margin: 0 2rem;
     flex: 1;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 
+        0 10px 25px rgba(139, 69, 19, 0.15),
+        inset 0 1px 3px rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(139, 69, 19, 0.1);
+    position: relative;
+    z-index: 2;
 }
 
 .timeline-content h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    color: #2c3e50;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: #8b4513;
     margin-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .timeline-content p {
@@ -544,7 +703,21 @@ section {
 
 /* Contact Section */
 .contact {
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #f0ebe0 0%, #e8dcc0 100%);
+    position: relative;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 69, 19, 0.05) 0%, transparent 50%);
+    z-index: 1;
 }
 
 .contact-content {
@@ -563,10 +736,15 @@ section {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: white;
+    background: linear-gradient(145deg, #f8f6f0, #f0ebe0);
     padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 
+        0 10px 25px rgba(139, 69, 19, 0.15),
+        inset 0 1px 3px rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(139, 69, 19, 0.1);
+    position: relative;
+    z-index: 2;
 }
 
 .contact-item i {
@@ -576,8 +754,11 @@ section {
 }
 
 .contact-item h4 {
-    color: #2c3e50;
+    color: #8b4513;
     margin-bottom: 0.5rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .contact-item p {
@@ -586,10 +767,15 @@ section {
 }
 
 .contact-form {
-    background: white;
+    background: linear-gradient(145deg, #f8f6f0, #f0ebe0);
     padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 
+        0 10px 25px rgba(139, 69, 19, 0.15),
+        inset 0 1px 3px rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(139, 69, 19, 0.1);
+    position: relative;
+    z-index: 2;
 }
 
 .form-group {
@@ -622,9 +808,23 @@ section {
 
 /* Footer */
 .footer {
-    background: #2c3e50;
-    color: white;
+    background: linear-gradient(135deg, #8b4513 0%, #6b3410 100%);
+    color: #f4f1e8;
     padding: 3rem 0 1rem;
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    z-index: 1;
 }
 
 .footer-content {
@@ -635,10 +835,14 @@ section {
 }
 
 .footer-section h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
-    color: #8b4513;
+    color: #f4f1e8;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-section ul {
@@ -650,20 +854,24 @@ section {
 }
 
 .footer-section ul li a {
-    color: #bdc3c7;
+    color: #d4c4a8;
     text-decoration: none;
     transition: color 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-section ul li a:hover {
-    color: #8b4513;
+    color: #f4f1e8;
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid #34495e;
-    color: #bdc3c7;
+    border-top: 1px solid rgba(244, 241, 232, 0.3);
+    color: #d4c4a8;
+    position: relative;
+    z-index: 2;
 }
 
 /* Responsive Design */
