@@ -105,7 +105,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    background: linear-gradient(135deg, #f8f6f0 0%, #e8e0d0 100%);
     position: relative;
     overflow: hidden;
 }
@@ -136,9 +136,10 @@ body {
 .hero-title {
     font-family: 'Playfair Display', serif;
     font-size: 4rem;
-    color: #2c3e50;
+    color: #8b4513;
     margin-bottom: 1rem;
     line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hero-subtitle {
@@ -203,15 +204,16 @@ body {
 .sculpture-preview {
     width: 300px;
     height: 400px;
-    background: linear-gradient(145deg, #e0e0e0, #f0f0f0);
+    background: linear-gradient(145deg, #d4c4a8, #e8dcc0);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(139, 69, 19, 0.2);
     position: relative;
     overflow: hidden;
+    border: 3px solid #8b4513;
 }
 
 .sculpture-preview::before {
